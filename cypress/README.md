@@ -8,7 +8,7 @@ Automate the following user flow using Cypress:
 2. Visit Products page.
 3. Wait for the list of products to load (async fetch).
 4. Click on Add Product button.
-5. Add Products fields and submit.
+5. Add Product fields and submit.
 6. Verify product was added to list
 7. Click product and verify it's details.
 
