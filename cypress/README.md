@@ -1,5 +1,15 @@
 # 🧪 Cypress E2E Task — UI QA Engineer
 
+## 📚 Task Background
+
+You are working on an e-commerce platform.
+We have 4 simple pages:
+
+    Home page (/)
+    Product list page (/products)
+    Product page (/product/:productId)
+    Add Product page (/product/new)
+
 ## 🎯 Task Overview
 
 Automate the following user flow using Cypress:
