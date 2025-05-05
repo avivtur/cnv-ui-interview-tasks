@@ -7,7 +7,9 @@ import { Product as ProductType } from "../context/ProductContext";
 const Product = () => {
   const { id } = useParams<{ id: string }>();
   const { products } = useProducts();
-  const [product, setProduct] = useState<ProductType | null>(null);
+  const [product, setProduct] = useState<ProductType | null | undefined>(
+    undefined
+  );
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -18,8 +20,16 @@ const Product = () => {
     return () => clearTimeout(timeout);
   }, [id, products]);
 
-  if (!product) {
+  if (product === undefined) {
     return <Spinner data-testid="loading-product" />;
+  }
+
+  if (product === null) {
+    return (
+      <PageSection data-testid="product-not-found">
+        <Title headingLevel="h1">Product not found</Title>
+      </PageSection>
+    );
   }
 
   return (
