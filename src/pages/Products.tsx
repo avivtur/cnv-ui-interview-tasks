@@ -44,7 +44,7 @@ const Products = () => {
           {products.map((product) => (
             <ListItem key={product.id} data-testid={`product-${product.id}`}>
               <Link
-                to={`/product/${product.id}`}
+                to={`/products/${product.id}`}
                 data-testid={`link-${product.id}`}
               >
                 {product.title}
