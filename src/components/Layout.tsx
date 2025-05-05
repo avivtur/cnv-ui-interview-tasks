@@ -50,7 +50,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         </MastheadToggle>
         <MastheadBrand>
           <MastheadLogo
-            href="https://docs.google.com/document/d/1Mmh8E9a0n1je02ialy5xe3I3fErgE1yK5NNqGyTIvjE/edit?tab=t.0"
+            href="https://docs.google.com/document/d/1Mmh8E9a0n1je02ialy5xe3I3fErgE1yK5NNqGyTIvjE/"
             target="_blank"
           >
             <img src="/openshift-virtualization.svg" alt="Logo" height={40} />
