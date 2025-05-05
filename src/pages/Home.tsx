@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
+import { PageSection, Title } from "@patternfly/react-core";
 
 const Home = () => {
   return (
-    <div data-testid="home-page">
-      <h1>Welcome to the Shop</h1>
-      <p>This is a demo for UI QA E2E testing task.</p>
-      <Link to="/products">
-        <button data-testid="go-to-products">View Products</button>
-      </Link>
-    </div>
+    <PageSection data-testid="home-page">
+      <Title headingLevel="h1">Welcome to the Shop</Title>
+      <p>This is a demo for the UI QA E2E testing task.</p>
+    </PageSection>
   );
 };
 

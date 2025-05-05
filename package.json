@@ -11,8 +11,11 @@
     "cy:open": "cypress open"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@patternfly/react-core": "^6.2.2",
+    "@patternfly/react-icons": "^6.2.2",
+    "@patternfly/react-styles": "^6.2.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-router": "^7.5.3",
     "react-router-dom": "^7.5.3"
   },

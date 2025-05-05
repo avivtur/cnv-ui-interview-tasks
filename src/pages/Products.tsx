@@ -1,48 +1,59 @@
 import { useEffect, useState } from "react";
+import {
+  PageSection,
+  Title,
+  Spinner,
+  List,
+  ListItem,
+  Button,
+  Flex,
+  FlexItem,
+} from "@patternfly/react-core";
 import { Link } from "react-router-dom";
-
-type Product = { id: number; title: string };
+import { useProducts } from "../context/ProductContext";
 
 const Products = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const { products } = useProducts();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulated async fetch (or use fetch('https://dummyjson.com/products') for real data)
-    setTimeout(() => {
-      setProducts([
-        { id: 1, title: "Laptop Pro 15" },
-        { id: 2, title: "Wireless Headphones" },
-      ]);
-      setLoading(false);
-    }, 1000);
+    const timeout = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <div data-testid="products-page">
-      <h1>Product List</h1>
-
-      <Link to="/" data-testid="back-to-home">
-        ← Back to Home
-      </Link>
+    <PageSection data-testid="products-page">
+      <Flex
+        justifyContent={{ default: "justifyContentSpaceBetween" }}
+        alignItems={{ default: "alignItemsCenter" }}
+      >
+        <Title headingLevel="h1">Product List</Title>
+        <FlexItem>
+          <Link to="/products/new">
+            <Button data-testid="add-product-button" variant="primary">
+              Add Product
+            </Button>
+          </Link>
+        </FlexItem>
+      </Flex>
 
       {loading ? (
-        <p data-testid="loading">Loading...</p>
+        <Spinner data-testid="loading" />
       ) : (
-        <ul data-testid="product-list">
+        <List data-testid="product-list">
           {products.map((product) => (
-            <li key={product.id} data-testid={`product-${product.id}`}>
+            <ListItem key={product.id} data-testid={`product-${product.id}`}>
               <Link
                 to={`/product/${product.id}`}
                 data-testid={`link-${product.id}`}
               >
                 {product.title}
               </Link>
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       )}
-    </div>
+    </PageSection>
   );
 };
 

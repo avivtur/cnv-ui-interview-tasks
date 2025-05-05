@@ -4,22 +4,13 @@
 
 Automate the following user flow using Cypress:
 
-1. Visit the **Home** page
-2. Verify content exists and click to navigate to **Products**
-3. Wait for the **product list** to load
-4. Verify presence of:
-   - Product items
-   - Navigation links to Home and to a **Product Details** page
-5. Navigate to a product’s **details** page
-6. Verify product name, price, and description (if exists)
-7. Verify navigation links back to **Home** and **Products** pages
-
-## ✅ Requirements
-
-- Use **Cypress** (test located in `cypress/e2e/task.cy.ts`)
-- Use selectors
-- Handle **async data** loading
-- Use **clean and readable code**
+1. Visit the home page.
+2. Visit Products page.
+3. Wait for the list of products to load (async fetch).
+4. Click on Add Product button.
+5. Add Products fields and submit.
+6. Verify product was added to list
+7. Click product and verify it's details.
 
 ## 🚀 Getting Started
 
